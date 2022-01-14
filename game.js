@@ -35,6 +35,70 @@ $(document).keydown(function(event){        //event是keydown事件自带的
             break;
     }
 });
+$(document).on("touchstart", function(e) {
+    // 判断默认行为是否可以被禁用
+    if (e.cancelable) {
+        // 判断默认行为是否已经被禁用
+        if (!e.defaultPrevented) {
+            e.preventDefault();
+        }
+    }   
+    startX = e.originalEvent.changedTouches[0].pageX,
+    startY = e.originalEvent.changedTouches[0].pageY;
+});
+$(document).on("touchend", function(e) {         
+    // 判断默认行为是否可以被禁用
+    if (e.cancelable) {
+        // 判断默认行为是否已经被禁用
+        if (!e.defaultPrevented) {
+            e.preventDefault();
+        }
+    }               
+    moveEndX = e.originalEvent.changedTouches[0].pageX,
+    moveEndY = e.originalEvent.changedTouches[0].pageY,
+    X = moveEndX - startX,
+    Y = moveEndY - startY;
+    //左滑
+    if ( X > 0 ) {
+        moveLeft()方法
+            * 完成向左移动的逻辑
+            * 返回值是Boolean类型,判断是否可以向左移动.
+         */
+        if (moveLeft()) {
+            //重新地随机生成两个数字
+            setTimeout("generateOneNumber()", 210);
+            setTimeout("isgameover()", 300);
+        }               
+        return;
+    }
+    //右滑
+    else if ( X < 0 ) {
+        if (moveRight()) {
+            //重新地随机生成两个数字
+            setTimeout("generateOneNumber()", 210);
+            setTimeout("isgameover()", 300);
+        }
+        return;
+    }
+    //下滑
+    else if ( Y > 0) {
+        if (moveDown()) {
+            //重新地随机生成两个数字
+             setTimeout("generateOneNumber()", 210);
+            setTimeout("isgameover()", 300);
+        }
+        return; 
+    }
+    //上滑
+    else if ( Y < 0 ) {
+        if (moveUp()) {
+            //重新地随机生成两个数字
+            setTimeout("generateOneNumber()", 210);
+            setTimeout("isgameover()", 300);
+        }
+        return;
+    }
+});
 function moveLeft(){
     //返回值是Boolean类型,判断是否可以向左移动.
     if(!canMoveLeft(board)){
