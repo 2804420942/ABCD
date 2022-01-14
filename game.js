@@ -60,7 +60,7 @@ $(document).on("touchend", function(e) {
     Y = moveEndY - startY;
     //左滑
     if ( X > 0 ) {
-        moveLeft()方法
+        /* moveLeft()方法
             * 完成向左移动的逻辑
             * 返回值是Boolean类型,判断是否可以向左移动.
          */
