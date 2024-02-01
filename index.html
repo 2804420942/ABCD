@@ -3,21 +3,24 @@
 <head>
 	<title>网页版2048小游戏</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="2048.css">
-	<script type="text/javascript" src="jquery-1.11.0.js"></script>
-	<script type="text/javascript" src="support.js"></script>
-	<script type="text/javascript" src="animation.js"></script>
-	<script type="text/javascript" src="main.js"></script>
-	<script type="text/javascript" src="game.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/2048.css">
+	<link rel="stylesheet" type="text/css" href="./css/dialog.css">
+	<script type="text/javascript" src="./js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="./js/zepto.min.js"></script>
+	<script type="text/javascript" src="./js/dialog.min.js"></script>
+	<script type="text/javascript" src="./js/support.js"></script>
+	<script type="text/javascript" src="./js/animation.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript" src="./js/game.js"></script>
 </head>
 <body>
 	<header>
-		<a href="javascript:restartgame();" id="newgamebutton">重新开始吧！小映</a>
+		<a href="javascript:restartgame();" id="newgamebutton">重新来玩呀！小映</a>
 		<p>
-			<img class="kingImage" src="./king.png" />
-			历史最高分：<span id="maxScore">0</span>
+			<img class="kingImage" src="./image/king.png"  />
+			最高分：<span id="maxScore">0</span>
 		</p>
-		<p>现在你的分数是：<span id="score">0</span>分，加油噢！</p>
+		<p>分数：<span id="score">0</span>分，加油加油！</p>
 	</header>
 
 	<div id="grid-container">
@@ -37,7 +40,13 @@
 		<div class="grid-cell" id="grid-cell-3-1"></div>
 		<div class="grid-cell" id="grid-cell-3-2"></div>
 		<div class="grid-cell" id="grid-cell-3-3"></div>
+	</div>
 
+	<div class="modal" id="modal">
+		<div class="content">
+			<p>不要灰心噢，输了有我</p>
+			<p>陪你一起</p>
+		</div>
 	</div>
 </body>
 </html>

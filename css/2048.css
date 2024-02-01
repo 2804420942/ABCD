@@ -1,6 +1,40 @@
+@font-face {
+    font-family: "阿里妈妈方圆体 VF Regular";
+    src: url("../font/pVV8QUObUC4w.woff2") format("woff2"),
+    url("../font/pVV8QUObUC4w.woff") format("woff");
+    font-display: swap;
+}
 body{
-    background-color: rgb(231,219,116);
+    background-color: rgb(255,215,212);
     transform: scale(.7) translateX(-50px);
+    font-family: 'pangpangzhurouti', sans-serif;
+    overflow: hidden;
+}
+
+body .modal {
+    position: fixed;
+    transform: scale(2) translate(5vw, -60vh);
+    background-color: rgba(0, 0, 0, .5);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body .modal .content {
+    background-image: url("../image/couple.jpg");
+    background-repeat:no-repeat;
+    background-size: 60vw 40vh;
+    border-radius: 20px;
+    width: 50vw;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    color: rgb(51, 181,229);
+    padding: 20px;
 }
 
 header {
@@ -8,12 +42,6 @@ header {
     margin: 0 auto;
     width: 500px;
     text-align: center;
-}
- 
-header h1 {
-    font-family: Arial;
-    font-size: 40px;
-    font-weight: bold;
 }
  
 header #newgamebutton {
@@ -25,20 +53,21 @@ header #newgamebutton {
     width: 300px;
     height: 60px;
     padding: 10px 10px;
-    background-color: #8f7a66;
-    font-family: Arial;
+    background-color: #FFB9DD;
+    font-family: '阿里妈妈方圆体 VF Regular', sans-serif;
+    font-size: 30px;
     color: white;
     border-radius: 10px;
     text-decoration: none;
 }
  
 header #newgamebutton:hover {
-    background-color: #9f8b77;
+    background-color: #FFB9FF;
 }
  
 header p {
-    font-family: Arial;
-    font-size: 25px;
+    font-family: '阿里妈妈方圆体 VF Regular', sans-serif;
+    font-size: 26px;
     margin: 20px auto;
     display: flex;
     justify-content: center;
@@ -54,7 +83,7 @@ header .kingImage {
     width: 500px;
     height: 500px;
     margin: 50px auto;
-    background-color: #bbada0;
+    background-color: #C0EDCF;
     border-radius: 10px;
     position: relative;
 }
@@ -64,20 +93,17 @@ header .kingImage {
     width: 100px;
     height: 100px;
     border-radius: 6px;
-    background-color: #ccc0b3;
+    background-color: #FFAECD;
  
     position: absolute;
 }
  
 .number-cell {
     border-radius: 6px;
- 
-    font-family: Arial;
-    font-weight: bold;
+    font-family: '阿里妈妈方圆体 VF Regular', sans-serif;
     font-size: 60px;
     line-height: 100px;
     text-align: center;
- 
     position: absolute;
 }
  
@@ -87,7 +113,6 @@ header .kingImage {
     width: 500px;
     text-align: center;
     vertical-align: middle;
- 
     position: absolute;
 }
  
@@ -96,7 +121,6 @@ header .kingImage {
     font-size: 50px;
     color: white;
     margin: 20px auto;
- 
     margin-top: 150px;
 }
  
@@ -110,20 +134,17 @@ header .kingImage {
 #restartgamebutton {
     display: block;
     margin: 20px auto;
- 
     width: 180px;
     padding: 10px 10px;
-    background-color: #8f7a66;
- 
+    background-color: #FCCDCF;
     font-family: Arial;
     font-size: 30px;
     color: white;
- 
     border-radius: 10px;
  
     text-decoration: none;
 }
  
 #restartgamebutton:hover {
-    background-color: #9f8b77;
+    background-color: #FCCDDD;
 }

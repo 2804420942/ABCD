@@ -39,6 +39,7 @@ $(document).keydown(function(event){        //event是keydown事件自带的
 });
 $(document).ready(function() {
     let maxScore = localStorage.getItem("maxScore") || 0;
+    $("#modal").hide();
     $("#maxScore").text(maxScore);
     $("#grid-container").on("touchstart", function(e) {
         // 判断默认行为是否可以被禁用
@@ -277,7 +278,7 @@ function isgameover() {
     }
 }
 function gameover() {
-    alert("gameover!");
+    $("#modal").slideDown();
     let maxScore = localStorage.getItem("maxScore") || 0;
     if (!maxScore || maxScore < score) {
         localStorage.setItem("maxScore", score);
@@ -285,6 +286,9 @@ function gameover() {
     }
     $("#grid-container").append("<div id='gameover' class='gameover'><p>本次得分</p><span>" + score + "</span><p id='restartgamebutton'>重新开始</p></div>");
     $("#restartgamebutton").on("touchend", restartgame);
+    $("#modal").on("click", function() {
+        $("#modal").slideUp();
+    });
     var gameover = $("#gameover");
     gameover.css("width", "500px");
     gameover.css("height", "500px");
