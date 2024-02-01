@@ -40,6 +40,14 @@ header p {
     font-family: Arial;
     font-size: 25px;
     margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .kingImage {
+    width: 50px;
+    height: 30px;
 }
  
 #grid-container {

@@ -38,6 +38,8 @@ $(document).keydown(function(event){        //event是keydown事件自带的
     }
 });
 $(document).ready(function() {
+    let maxScore = localStorage.getItem("maxScore") || 0;
+    $("#maxScore").text(maxScore);
     $("#grid-container").on("touchstart", function(e) {
         // 判断默认行为是否可以被禁用
         if (e.cancelable) {
@@ -276,7 +278,13 @@ function isgameover() {
 }
 function gameover() {
     alert("gameover!");
-    $("#grid-container").append("<div id='gameover' class='gameover'><p>本次得分</p><span>" + score + "</span><a href='javascript:restartgame();' id='restartgamebutton'>Restart</a></div>");
+    let maxScore = localStorage.getItem("maxScore") || 0;
+    if (!maxScore || maxScore < score) {
+        localStorage.setItem("maxScore", score);
+        $("#maxScore").text(score);
+    }
+    $("#grid-container").append("<div id='gameover' class='gameover'><p>本次得分</p><span>" + score + "</span><p id='restartgamebutton'>重新开始</p></div>");
+    $("#restartgamebutton").on("touchend", restartgame);
     var gameover = $("#gameover");
     gameover.css("width", "500px");
     gameover.css("height", "500px");
