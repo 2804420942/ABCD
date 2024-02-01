@@ -1,12 +1,8 @@
 body{
     background-color: rgb(231,219,116);
+    transform: scale(.7) translateX(-50px);
 }
 
-@media screen and (max-width: 800px) {
-    body{
-        transform: scale(1.5);
-    }
-}
 header {
     display: block;
     margin: 0 auto;
@@ -25,8 +21,8 @@ header #newgamebutton {
     justify-content: center;
     align-items: center;
     margin: 0px auto;
-    margin-top: 500px;
-    width: 500px;
+    margin-top: 100px;
+    width: 300px;
     height: 60px;
     padding: 10px 10px;
     background-color: #8f7a66;
@@ -51,7 +47,6 @@ header p {
     height: 500px;
     margin: 50px auto;
     background-color: #bbada0;
- 
     border-radius: 10px;
     position: relative;
 }
