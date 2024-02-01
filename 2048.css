@@ -1,6 +1,11 @@
 body{
     background-color: rgb(231,219,116);
-    transform: scale(1.5);
+}
+
+@media screen and (max-width: 800px) {
+    body{
+        transform: scale(1.5);
+    }
 }
 header {
     display: block;
